@@ -9,7 +9,7 @@
 }
 
 body {
-    max-width: 1200px;
+    max-width: auto;
     margin: 0 auto;
 }
 
@@ -42,7 +42,8 @@ header .navegacao-primaria li a {
     font-size: 1.3rem;
 }
 
-.section-div {
+.section-home {
+    animation: inicializar .7s forwards;
     background-color: #000;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -52,26 +53,26 @@ header .navegacao-primaria li a {
     padding: 60px;
 }
 
-.section-div div {
+.section-home div {
     margin-top: 120px;
     align-self: start;
     display: grid;
     gap: 30px;
 }
 
-.section-div div h2 {
+.section-home div h2 {
     font-family: 'Playfair';
     font-weight: 600;
     color: #f7f7f7;
 }
 
-.section-div div p {
+.section-home div p {
     font-family: 'Playfair';
     font-weight: 200;
     color: #f7f7f7;
 }
 
-.section-div div a {
+.section-home div a {
     justify-self: start;
     color: #fff;
     padding: 15px 40px;
@@ -79,6 +80,179 @@ header .navegacao-primaria li a {
     border: 2px solid white
 }
 
-.section-div img {
+.section-home div span {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.section-home div span img {
+    opacity: 1;
+    max-width: 10%;
+}
+
+.section-home img {
     max-width: 100%;
+}
+
+.section-about {
+    background-color: #000;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 60px;
+    padding: 60px;
+}
+
+.section-about div {
+    margin-top: 120px;
+    align-self: start;
+    display: grid;
+    gap: 30px;
+}
+
+.section-about div h2 {
+    font-family: 'Playfair';
+    font-weight: 600;
+    color: #f7f7f7;
+}
+
+.section-about div p {
+    font-family: 'Playfair';
+    font-weight: 200;
+    color: #f7f7f7;
+}
+
+.section-about div a {
+    justify-self: start;
+    color: #fff;
+    padding: 15px 40px;
+    border-radius: 5px;
+    border: 2px solid white
+}
+
+.section-projects {
+    background-color: #000;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 60px;
+    padding: 60px;
+}
+
+.section-projects div {
+    margin-top: 120px;
+    align-self: start;
+    display: grid;
+    gap: 30px;
+}
+
+.section-projects div h2 {
+    font-family: 'Playfair';
+    font-weight: 600;
+    color: #f7f7f7;
+}
+
+.section-projects div p {
+    font-family: 'Playfair';
+    font-weight: 200;
+    color: #f7f7f7;
+}
+
+.section-projects div a {
+    justify-self: start;
+    color: #fff;
+    padding: 15px 40px;
+    border-radius: 5px;
+    border: 2px solid white
+}
+
+.section-habilities {
+    background-color: #000;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 60px;
+    padding: 60px;
+}
+
+.section-habilities div {
+    margin-top: 120px;
+    align-self: start;
+    display: grid;
+    gap: 30px;
+}
+
+.section-habilities div h2 {
+    font-family: 'Playfair';
+    font-weight: 600;
+    color: #f7f7f7;
+}
+
+.section-habilities div p {
+    font-family: 'Playfair';
+    font-weight: 200;
+    color: #f7f7f7;
+}
+
+.section-habilities div a {
+    justify-self: start;
+    color: #fff;
+    padding: 15px 40px;
+    border-radius: 5px;
+    border: 2px solid white
+}
+
+footer {
+    background-color: #000;
+    padding: 10px;
+    display: grid;
+    align-items: center;
+    justify-content: space-around;
+}
+
+footer h2 {
+    font-family: 'Playfair';
+    font-weight: 600;
+    color: #f7f7f7;
+}
+
+footer p {
+    font-family: 'Playfair';
+    font-weight: 200;
+    color: #f7f7f7;
+}
+
+footer a {
+    font-family: 'Playfair';
+    font-weight: 200;
+    color: #f7f7f7;
+}
+
+.digitando::after {
+    content: '|';
+    opacity: 1;
+    animation: pisca .6s infinite;
+}
+
+@keyframes pisca {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes inicializar {
+    from {
+        opacity: 0;
+        tranform: translate3d(0, -60px, 0);
+    }
+
+    to {
+        opacity: 1;
+        tranform: translate3d(0, 0, 0);
+    }
 }
