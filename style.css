@@ -9,12 +9,15 @@
 }
 
 body {
-    max-width: auto;
+    background-color: #000;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
+/* SEÇÃO CABEÇALHO */
+
 header {
-    background-color: #000;
+    background-color: #1d1c1c;
     padding: 10px;
     display: flex;
     align-items: center;
@@ -30,6 +33,10 @@ header span {
     color: #fff;
 }
 
+header i {
+    color: #1d1c1c;
+}
+
 header .navegacao-primaria {
     display: flex;
     gap: 10px;
@@ -41,6 +48,8 @@ header .navegacao-primaria li a {
     color: #fff;
     font-size: 1.3rem;
 }
+
+/* SEÇÃO INÍCIO */
 
 .section-home {
     animation: inicializar .7s forwards;
@@ -86,50 +95,153 @@ header .navegacao-primaria li a {
     align-items: center;
 }
 
-.section-home div span img {
-    opacity: 1;
-    max-width: 10%;
-}
-
 .section-home img {
     max-width: 100%;
+    border-radius: 50%;
 }
 
-.section-about {
-    background-color: #000;
+.section-images {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap: 60px;
-    padding: 60px;
+    gap: 10px;
 }
 
-.section-about div {
-    margin-top: 120px;
-    align-self: start;
+.section-images img {
+    display: block;
+    height: 50px;
+    width: 50px;
+    border-radius: 0;
+}
+
+.digitando::after {
+    content: '|';
+    opacity: 1;
+    animation: pisca .6s infinite;
+}
+
+/* SEÇÃO SOBRE MIM */
+
+main {
+    background-color: #111;
+    color: white;
+}
+
+main .sobre {
+    margin-top: 60px;
     display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 30px;
+    justify-content: center;
+    padding: 40px;
 }
 
-.section-about div h2 {
-    font-family: 'Playfair';
-    font-weight: 600;
-    color: #f7f7f7;
-}
-
-.section-about div p {
-    font-family: 'Playfair';
-    font-weight: 200;
-    color: #f7f7f7;
-}
-
-.section-about div a {
-    justify-self: start;
+.sobre_titulo {
+    margin: 30px 0;
+    grid-column: 1/-1;
+    text-align: center;
     color: #fff;
-    padding: 15px 40px;
-    border-radius: 5px;
-    border: 2px solid white
 }
+
+.sobre_titulo h1 {
+    font-size: 2.5rem;
+    color: #ff5d56;
+    margin-bottom: 15px;
+    font-family: 'Playfair', cursive;
+
+}
+
+.sobre_titulo p {
+    color: #707070;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.sobre_titulo div {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.sobre_titulo span {
+    display: block;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: #dc3545;
+}
+
+.sobre img {
+    animation: ladoSecao .5s ease-in-out forwards;
+    cursor: pointer;
+    grid-row: 2;
+    max-width: 100%;
+    border-radius: 4px;
+    filter: blur(0);
+}
+
+.sobre img::hover {
+    transition: .5s ease-in;
+    filter: blur(1px);
+}
+
+.sobre_conteudo {
+    animation: sobeSecao .6s ease-in-out forwards;
+    grid-column: 2/-1;
+    display: grid;
+    color: #707070;
+    grid-template-columns: 1fr 1fr;
+
+}
+
+.sobre_texto {
+    display: grid;
+    grid-column: 1/-1;
+    grid-template-columns: 1fr 1fr;
+}
+
+.sobre_texto h1 {
+    font-size: 2.3rem;
+    color: #fff;
+    grid-column: 1/-1;
+}
+
+.sobre_texto h1::after {
+    background-color: #ff5d56;
+    height: 6px;
+    width: 60px;
+    margin: 20px 0;
+    content: '';
+    display: block;
+    border-radius: 5px;
+}
+
+.sobre_texto p {
+    font-size: 1.3rem;
+    grid-row: 2;
+    grid-column: 1/-1;
+}
+
+.sobre_info {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column: 1/-1;
+    gap: 15px;
+    align-items: center;;
+}
+
+.sobre_info i {
+    color: #dc3545;
+    display: inline-block;
+    padding-right: 15px;
+    font-size: 1.5rem;
+}
+
+.sobre_info p {
+    font-size: .9rem;
+}
+
+/* SEÇÃO PROJETOS */
 
 .section-projects {
     background-color: #000;
@@ -167,6 +279,8 @@ header .navegacao-primaria li a {
     border: 2px solid white
 }
 
+/* SEÇÃO HABILIDADES */
+
 .section-habilities {
     background-color: #000;
     display: flex;
@@ -203,6 +317,8 @@ header .navegacao-primaria li a {
     border: 2px solid white
 }
 
+/* SEÇÃO RODAPÉ */
+
 footer {
     background-color: #000;
     padding: 10px;
@@ -229,11 +345,7 @@ footer a {
     color: #f7f7f7;
 }
 
-.digitando::after {
-    content: '|';
-    opacity: 1;
-    animation: pisca .6s infinite;
-}
+/* ANIMAÇÕES */
 
 @keyframes pisca {
     from {
@@ -254,5 +366,59 @@ footer a {
     to {
         opacity: 1;
         tranform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes sobeSecao {
+    from {
+        transition: .5s;
+        transform: translate3d(60px, 0, 0);
+    }
+
+    to {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes ladoSecao {
+    from {
+        transition: .5s;
+        transform: translate3d(-60px, 0, 0);
+    }
+
+    to {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+/* RESPONSIVIDADE */
+
+@media(max-width: 992px) {
+    header .navegacao-primaria {
+        display: none;
+    }
+
+    header i {
+        color: #f7f7f7;
+        font-size: 2rem;
+    }
+    
+    .section-home {
+        background-image: url(img/foto_minha.jpeg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    
+    .section-home img {
+        display: none;
+    }
+
+    .sobre img {
+        grid-column: 1/-1;
+        justify-self: center;
+    }
+
+    .sobre_conteudo {
+        grid-column: 1/-1;
     }
 }
