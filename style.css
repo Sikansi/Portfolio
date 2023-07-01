@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 * {
     padding: 0;
@@ -89,19 +89,13 @@ header .navegacao-primaria li a {
     border: 2px solid white
 }
 
-.section-home div span {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-}
-
 .section-home img {
     max-width: 100%;
     border-radius: 50%;
 }
 
 .section-images {
-    display: flex;
+    display: flex !important;
     gap: 10px;
 }
 
@@ -134,14 +128,14 @@ main .sobre {
     padding: 40px;
 }
 
-.sobre_titulo {
+.sobre-titulo {
     margin: 30px 0;
     grid-column: 1/-1;
     text-align: center;
     color: #fff;
 }
 
-.sobre_titulo h1 {
+.sobre-titulo h1 {
     font-size: 2.5rem;
     color: #ff5d56;
     margin-bottom: 15px;
@@ -149,20 +143,20 @@ main .sobre {
 
 }
 
-.sobre_titulo p {
+.sobre-titulo p {
     color: #707070;
     font-size: 1.4rem;
     margin-bottom: 1rem;
     position: relative;
 }
 
-.sobre_titulo div {
+.sobre-titulo div {
     display: flex;
     gap: 10px;
     justify-content: center;
 }
 
-.sobre_titulo span {
+.sobre-titulo span {
     display: block;
     height: 20px;
     width: 20px;
@@ -184,7 +178,7 @@ main .sobre {
     filter: blur(1px);
 }
 
-.sobre_conteudo {
+.sobre-conteudo {
     animation: sobeSecao .6s ease-in-out forwards;
     grid-column: 2/-1;
     display: grid;
@@ -193,19 +187,19 @@ main .sobre {
 
 }
 
-.sobre_texto {
+.sobre-texto {
     display: grid;
     grid-column: 1/-1;
     grid-template-columns: 1fr 1fr;
 }
 
-.sobre_texto h1 {
+.sobre-texto h1 {
     font-size: 2.3rem;
     color: #fff;
     grid-column: 1/-1;
 }
 
-.sobre_texto h1::after {
+.sobre-texto h1::after {
     background-color: #ff5d56;
     height: 6px;
     width: 60px;
@@ -215,13 +209,13 @@ main .sobre {
     border-radius: 5px;
 }
 
-.sobre_texto p {
+.sobre-texto p {
     font-size: 1.3rem;
     grid-row: 2;
     grid-column: 1/-1;
 }
 
-.sobre_info {
+.sobre-info {
     margin-top: 30px;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -230,15 +224,106 @@ main .sobre {
     align-items: center;;
 }
 
-.sobre_info i {
+.sobre-info i {
     color: #dc3545;
     display: inline-block;
     padding-right: 15px;
     font-size: 1.5rem;
 }
 
-.sobre_info p {
+.sobre-info p {
     font-size: .9rem;
+}
+
+/* SEÇÃO SERVICES */
+.services {
+    margin-top: -30px;
+    padding: 60px;
+    background-color: #151515;
+}
+
+.my-service {
+    padding: 60px;
+    color: white;
+}
+
+.my-service ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.my-service ul li {
+    cursor: pointer;
+    border-radius: 6px;
+    position: relative;
+    padding: 10px;
+    display: grid;
+    gap: 30px;
+    text-align: center;
+    max-width: 300px;
+    height: 300px;
+    background-color: #222;
+    align-content: center;
+}
+
+.my-service ul li i {
+    font-size: 2.7rem;
+    color: #dc3545;
+}
+
+.my-service ul li h3 {
+    color: #fff;
+    font-size: 1.6rem;
+    font-family: 'Playfair';
+    font-weight: 500;
+}
+
+.my-service ul li p {
+    color: #707070;
+    font-size: 1.1rem;
+}
+
+.my-service li::before {
+    content: '';
+    transition: .5s ease-in-out;
+    border-radius: 6px;
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    border-top: 2px solid transparent;
+    border-right: 2px solid transparent;
+}
+
+.my-service li::after {
+    content: '';
+    transition: .5s ease-in-out;
+    border-radius: 6px;
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    bottom: -2px;
+    left: -2px;
+    border-bottom: 2px solid transparent;
+    border-left: 2px solid transparent;
+}
+
+.my-service li:hover::before {
+    width: 100%;
+    height: 100%;
+    border-top: 2px solid red;
+    border-right: 2px solid red;
+}
+
+.my-service li:hover::before {
+    width: 100%;
+    height: 100%;
+    border-bottom: 2px solid red;
+    border-left: 2px solid red;
 }
 
 /* SEÇÃO PROJETOS */
@@ -418,7 +503,7 @@ footer a {
         justify-self: center;
     }
 
-    .sobre_conteudo {
+    .sobre-conteudo {
         grid-column: 1/-1;
     }
 }
