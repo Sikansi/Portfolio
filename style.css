@@ -39,14 +39,31 @@ header i {
 
 header .navegacao-primaria {
     display: flex;
-    gap: 10px;
+    gap: 30px;
     align-items: center;
 }
 
 header .navegacao-primaria li a {
-    padding: 10px;
     color: #fff;
+    width: 0px;
+    height: 0px;
     font-size: 1.3rem;
+}
+
+header .navegacao-primaria li a::after {
+    content: '';
+    width: 0px;
+    height: 0px;
+    display: block;
+    border-bottom: 4px solid transparent;
+    transition: .9s;
+}
+
+header .navegacao-primaria li a:hover::after {
+    width: 100%;
+    height: 0px;
+    padding: 0px;
+    border-bottom: 4px solid #dc3545;
 }
 
 /* SEÇÃO INÍCIO */
@@ -319,11 +336,132 @@ main .sobre {
     border-right: 2px solid red;
 }
 
-.my-service li:hover::before {
+.my-service li:hover::after {
     width: 100%;
     height: 100%;
     border-bottom: 2px solid red;
     border-left: 2px solid red;
+}
+
+/* SEÇÃO EXPERIENCIAS */
+.my-resume {
+    color: #ffff;
+}
+
+.resume-generico {
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    gap: 10px;
+    align-items: start;
+}
+
+.resume-generico h2 {
+    font-family: 'Poppins';
+    font-size: 1.5rem;
+    background-color: #ff5d56;
+    justify-self: start;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+.resume-generico h2 i {
+    margin-right: 10px;
+}
+
+.education {
+    margin-bottom: 30px;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.experience {
+    margin-bottom: 30px;
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.experience-content ul {
+    color: #ff5d56;
+    gap: 10px;
+    display: flex;
+    cursor: pointer;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.resume-generico .experience-content div {
+    background-color: #222;
+    padding: 40px;
+    position: relative;
+}
+
+.resume-generico .experience-content div::before {
+    content: '';
+    border-right: 30px solid transparent;
+    border-bottom: 30px solid #222;
+    position: absolute;
+    top: -20px;
+    left: 30px;
+    display: inline-block;
+}
+
+.resume-generico .experience-content div span {
+    color: #dc3545;
+    font-family: "Poppins";
+    font-weight: bold;
+}
+
+.resume-generico .experience-content div h3 {
+    font-family: 'Poppins';
+    margin: 10px 0;
+}
+
+.resume-generico .experience-content div p {
+    color: #707070;
+    font-size: 1.1rem;
+}
+
+.education-content ul {
+    color: #ff5d56;
+    gap: 10px;
+    display: flex;
+    cursor: pointer;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.resume-generico .education-content div {
+    background-color: #222;
+    padding: 40px;
+    position: relative;
+}
+
+.resume-generico .education-content div::before {
+    content: '';
+    border-right: 30px solid transparent;
+    border-bottom: 30px solid #222;
+    position: absolute;
+    top: -20px;
+    left: 30px;
+    display: inline-block;
+}
+
+.resume-generico .education-content div span {
+    color: #dc3545;
+    font-family: "Poppins";
+    font-weight: bold;
+}
+
+.resume-generico .education-content div h3 {
+    font-family: 'Poppins';
+    margin: 10px 0;
+}
+
+.resume-generico .education-content div p {
+    color: #707070;
+    font-size: 1.1rem;
 }
 
 /* SEÇÃO PROJETOS */
@@ -479,6 +617,11 @@ footer a {
 /* RESPONSIVIDADE */
 
 @media(max-width: 992px) {
+    header {
+        justify-content: space-between;
+        padding: 30px 70px;
+    }
+
     header .navegacao-primaria {
         display: none;
     }
@@ -487,11 +630,27 @@ footer a {
         color: #f7f7f7;
         font-size: 2rem;
     }
+
+    header .navegacao-primaria.ativado {
+        position: absolute;
+        background-color: linear-gradient(rgb(255, 255, 255), rgba(236, 16, 16, 0.724));
+        display: grid;
+        top: 80px;
+        color: white;
+        z-index: 1;
+        padding: 30px;
+        font-size: 1.6rem;
+        font-weight: bold;
+        border-radius: 0 0 4px 4px;
+        right: 20px;
+        animation: sobeSecao .8s ease-in-out forwards;
+    }
     
     .section-home {
         background-image: url(img/foto_minha.jpeg);
         background-repeat: no-repeat;
         background-size: cover;
+        z-index: 0;
     }
     
     .section-home img {
